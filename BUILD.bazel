@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "TOOLS_NOGO", "nogo")
+load("@bazel_gazelle//:def.bzl", "DEFAULT_LANGUAGES", "gazelle", "gazelle_binary")
+
+nogo(
+    name = "nogo",
+    visibility = ["//visibility:public"],
+    deps = TOOLS_NOGO,
+)
+
+gazelle_binary(
+    name = "my_gazelle",
+    languages = DEFAULT_LANGUAGES
+)
